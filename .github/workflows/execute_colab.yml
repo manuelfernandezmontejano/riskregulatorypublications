@@ -2,7 +2,7 @@ name: Ejecutar Notebook de Google Colab
 
 on:
   schedule:
-    - cron: "0 8 * * *"  # Ejecuta todos los días a las 08:00 UTC
+    - cron: "20 18 * * *"  # Ejecuta todos los días a las 08:00 UTC
   workflow_dispatch: # Permite ejecución manual desde GitHub Actions
 
 jobs:
@@ -22,7 +22,7 @@ jobs:
         run: pip install nbconvert papermill requests
 
       - name: Ejecutar el Notebook
-        run: papermill tu_notebook.ipynb output_notebook.ipynb
+        run: papermill WebScrapping_Regulation.ipynb output_notebook.ipynb
 
       - name: Subir los cambios al repositorio
         run: |
